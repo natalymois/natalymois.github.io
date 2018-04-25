@@ -27,7 +27,7 @@ function winScrollUp() {
   if (scrollingUp > 0) {
     window.scrollTo(0, scrollingUp);
     scrollingUp = scrollingUp - 20;
-    timer = setTimeout(winScrollUp, 1)
+    timer = setTimeout(winScrollUp, 5)
 
   } else {
     clearTimeout(timer);

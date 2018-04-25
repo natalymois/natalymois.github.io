@@ -398,11 +398,11 @@ section.parallax-section .parallax-window::before {
 }
 
 .parallax-window h4 {
+  max-width: 1000px;
     color: #ccc;
     font-size: 30px;
     line-height: 1.43333;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 0 auto;
     font-family: inherit;
     font-weight: 300;
 }
@@ -439,14 +439,15 @@ section.parallax-section .parallax-window::before {
     font-size: 20px;
     font-family: OpenSansLight;
     margin-top: 25px;
-    font-weight: 100
+    font-weight: 100;
 }
 
 .site-descr h3 {
     font-size: 24px;
     color: #4C367F;
     font-family: OpenSansBold;
-    line-height: 20px
+    line-height: 20px;
+	margin-bottom: 10px
 }
 
 .site-descr p, .site-descr ul li{
@@ -1788,15 +1789,24 @@ textarea {
   header.inner .toggle_but {
       display: block
   }
+  #about {
+    min-height: 400px
+  }
   .w3-about-top {
-    width: 50%;
-    margin-left: 25%;
+    width: 30%;
+    margin-left: 0;
+    z-index: -1;
   }
   .w3l-about {
-    width: 100%;
+    width: 75%;
     padding: 2em;
     position: static;
-    margin-top: -20px;
+    margin-top: -150px;
+    margin-left: 25%;
+    border-top-left-radius: 10%;
+  }
+  .w3l-about span {
+    display: none;
   }
   #skills {
     margin-top: 0
@@ -1805,12 +1815,8 @@ textarea {
       padding-bottom: 0
   }
   footer .footer-wrap {
-      padding-bottom: 120px
-  }
-  footer .copy {
-      height: 120px;
-      overflow: visible;
-      line-height: 30px
+    margin-top: -50px;
+    min-height: 100px
   }
   footer .copy .dev {
       right: 50%;
@@ -1896,10 +1902,27 @@ textarea {
     margin-bottom: 5px;
     width: 49%;
   }
+  .w3-about-top {
+    margin-left: 35%;
+    z-index: 0
+  }
+  .w3-about-top img {
+    border-radius: 20%;
+  }
+  .w3l-about {
+    width: 100%;
+    margin-top: -20px;
+    margin-left: 0;
+    border-top-left-radius: 0;
+  }
 }
 @media only screen and (max-width:500px) {
   #skills .skills-item {
     width: 100%;
+  }
+  #skills .skills-item-image {
+    height: 100px;
+    width: 100px
   }
   section.parallax-section .parallax-window {
     padding: 270px 0 130px;
@@ -1908,12 +1931,9 @@ textarea {
       -webkit-transform: rotateY(60deg);
       transform: rotateY(60deg)
   }
-  footer {
-      padding-top: 40px
-  }
   section.black_section {
-      margin-top: 30px!important;
-      margin-bottom: 30px!important;
+      margin-top: 30px;
+      margin-bottom: 30px;
       padding: 40px 0
   }
   #portfolio .monitor .monitor{
@@ -1932,8 +1952,36 @@ textarea {
   .title-left {
       font-size: 22px
   }
+  .title_block .section_title {
+    font-size: 22px;
+  }
+  section.black_section.contacts #feedback {
+    margin: 0
+  }
+  section.black_section.contacts #feedback p,
+  footer .footer-wrap .foot-info p {
+    line-height: 20px;
+    font-size: 16px;
+  }
+  section.black_section.contacts #feedback p:last-child {
+    margin-right: 15px
+  }
   .fixed_menu .button_logo {
     background-color: rgba(63,45,106,0.7);
+  }
+  footer .foot-info, footer .foot-info .col-xs-12 {
+    padding: 0
+  }
+  footer .contact-wrap p {
+    margin-left: 0
+  }
+  footer .contact-wrap p:first-child {
+    margin-left: 10px;
+    margin-right: 10px
+  }
+  footer .contact-wrap p:last-child {
+    margin-right: 10px;
+    margin-left: 15px
   }
 }
 

@@ -104,10 +104,10 @@ header {
 }
 
 header.open_mnu .header_wrap {
-    transform: rotateY(20deg);
-    -webkit-transform: rotateY(20deg);
-    -moz-transform: rotateY(20deg);
-    -o-transform: rotateY(20deg)
+    transform: rotateX(20deg);
+    /*-webkit-transform: rotateX(20deg);
+    -moz-transform: rotateX(20deg);
+    -o-transform: rotateX(20deg)*/
 }
 
 header.open_mnu .button_down {
@@ -124,16 +124,28 @@ header .hidden-block {
 
 header nav {
     position: absolute;
-    top: 50%;
-    right: 20px;
-    margin-top: -92px;
-    z-index: -1
+    top: 20px;
+    left: calc(50% - 287px);
+    /*margin-top: -92px;*/
+    z-index: -1;
+}
+
+header .nav {
+  display: flex;
+}
+header .nav li {
+  margin-right: 30px
+}
+
+header .nav li:last-child {
+  margin-right: 0
 }
 
 header nav li a {
     position: relative;
     display: block;
     color: #3D1F4B;
+    /*text-shadow: 2px 2px #3D1F4B;*/
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 600;
@@ -179,25 +191,38 @@ header h1 {
 header .button-menu {
   position: absolute;
   display: inline-block;
-  right: 20px;
-  top: 50%;
+  right: 45%;
+  top: 15px;
   padding: 0 50px 0 20px;
-  margin-top: -24px;
+  /*margin-top: -24px;*/
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   color: #fff;
-  font-size: 26px;
+  font-size: 22px;
+  text-shadow: 2px 0px #241a3e;
   box-shadow: 6px 4px 3px #666;
-  background: #4C367F;
+  background: #26246C;
   cursor: pointer;
 }
-header .button-menu::after {
+header .button-menu i {
+  position: absolute;
+    right: 10px;
+    top: 7px;
+    font-size: 20px;
+    /*color: #8746C1*/
+    color: #ccc
+}
+/*header .button-menu::after {
   position: absolute;
   top: 0px;
   right: 10px;
   display: block;
   content: "\21fe";
   font-size: 26px;
+}*/
+header .button-menu:hover {
+  background: linear-gradient(to bottom,#1C1451 0%,#7054B8 70%,#A266C6);
+  transition: all 0.3s;
 }
 .toggle_but,
 .top_nav {
@@ -219,15 +244,12 @@ header .header_wrap {
     background-size: cover;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
+    /*-webkit-transform-style: preserve-3d;*/
     transform-style: preserve-3d;
-    -webkit-transform-origin: left;
+    /*-webkit-transform-origin: left;*/
     -ms-transform-origin: left;
-    transform-origin: left;
-    transition: all .4s;
-    -webkit-transition: all .4s;
-    -moz-transition: all .4s;
-    -o-transition: all .4s
+    transform-origin: bottom;
+    transition: all .5s;
 }
 
 .top_nav {
@@ -243,14 +265,19 @@ header .header_wrap {
 }
 
 .button-menu.tog_mnu {
-  background: #fff;
-  color: #4C367F;
+  background: linear-gradient(to bottom,#7054B8 0%,#241A3E 100%);
+  /*background: #3F2D6C;*/
+  /*color: #4C367F;*/
   transition: all 0.3s ease;
   font-size: 24px;
+  box-shadow: 3px 4px 3px #3E2D6A;
 }
 
 .button-menu.tog_mnu::after {
   font-size: 24px;
+}
+.button-menu.tog_mnu i {
+  color: #8746C1
 }
 
 .toggle_but.tog_mnu span:nth-child(1) {
@@ -351,7 +378,7 @@ header .header_wrap {
 }
 
 .soc_wrap {
-    bottom: 0
+    top: 70px
 }
 
 .soc_wrap a {
@@ -406,16 +433,18 @@ header .header_wrap {
     left: 50%;
     width: 85px;
     height: 85px;
-    background-color: #111;
+    /*background-color: #111;*/
+    background-image: linear-gradient(#241A3E 0%,#7054B8 60%,#C5BAE2);
     text-align: center;
     line-height: 85px;
     font-size: 30px;
     color: #9650b8;
+    text-shadow: 0px 2px #241a3e;
     cursor: pointer;
     margin-left: -42px;
     z-index: 100;
     -webkit-box-shadow: 0 2px 2px #111;
-    box-shadow: 0 2px 2px #111;
+    box-shadow: 5px 5px 10px #3F2D6A;
     border-radius: 50%;
     transition: all .3s;
     -webkit-transition: all .3s;
@@ -603,6 +632,11 @@ header .header_wrap {
         -o-transform: rotate(4deg)
     }
 }
+@media (max-width:1100px) and (max-height:460px) {
+  header.open_mnu .header_wrap {
+    transform: rotateX(30deg);
+  }
+}
 @media only screen and (max-width:992px) {
   header .prof, header h1 {
     left: calc(50% - 182px);
@@ -614,7 +648,7 @@ header .header_wrap {
     font-size: 20px
   }
   header nav {
-    right: 0;
+    left: calc(50% - 262px);
   }
   header nav li a {
     font-size: 16px;
@@ -628,6 +662,9 @@ header .header_wrap {
   }
 }
 @media only screen and (max-width:768px) {
+  header .header_wrap {
+    background-position-x: center;
+  }
   header h1 {
     font-size: 34px;
   }
@@ -641,10 +678,14 @@ header .header_wrap {
   }
   header .button-menu {
     font-size: 16px;
-    top: 65%;
+    right: calc(50% - 58px);
   }
   header .button-menu::after {
     font-size: 16px
+  }
+  header .button-menu i {
+    top: 4px;
+    font-size: 16px;
   }
   .button-menu.tog_mnu {
     font-size: 16px;
@@ -667,15 +708,44 @@ header .header_wrap {
     font-size: 16px
   }
   header.open_mnu .header_wrap {
-    transform: rotateY(30deg);
+    transform: rotateX(25deg);
   }
   header nav {
-    right: 10px;
+    left: calc(50% - 242px);
+  }
+  header .nav li {
+    margin-right: 20px;
   }
 }
 @media only screen and (max-width:600px) {
   header.open_mnu .header_wrap {
-    transform: rotateY(40deg);
+    transform: rotateX(35deg);
+  }
+  header nav {
+    left: calc(50% - 139px);
+  }
+  header .nav {
+    flex-direction: column;
+  }
+  /*header .nav li {
+    margin-right: 10px;
+  }*/
+  header .nav li:nth-child(2) {
+    margin-left: 50px
+  }
+  header .nav li:nth-child(3) {
+    margin-left: 100px
+  }
+  header .nav li:nth-child(4) {
+    margin-left: 150px;
+    margin-top: -64.8px;
+  }
+  header .nav li:nth-child(5) {
+    margin-left: 200px;
+    margin-top: -64.8px;
+  }
+  header nav li a {
+    font-size: 14px;
   }
 }
 @media only screen and (max-width:500px) {
@@ -692,10 +762,10 @@ header .header_wrap {
   header .prof {
     left: calc(50% - 100px)
   }
-  header.open_mnu .header_wrap {
+  /*header.open_mnu .header_wrap {
     -webkit-transform: rotateY(55deg);
     transform: rotateY(55deg)
-  }
+  }*/
   header h1 {
     font-size: 30px;
   }
@@ -705,18 +775,47 @@ header .header_wrap {
   header nav {
     right: 5px
   }
-  header nav li a {
+  /*header nav li a {
     font-size: 16px;
     right: 20px;
-  }
+  }*/
   header .button_down {
       width: 45px;
       height: 45px;
       line-height: 45px;
       margin-left: -2px
   }
+  header .toggle_but, .top_nav {
+    width: 30px
+  }
+  header .toggle_but span {
+    width: 20px;
+    left: 5px
+  }
+  header .toggle_but span:nth-child(2) {
+    top: 18px;
+  }
+  header .toggle_but span:nth-child(3) {
+    top: 26px;
+  }
+  .soc_wrap a {
+    font-size: 20px;
+    width: 30px
+  }
 }
 @media only screen and (max-width:400px) {
+  header nav {
+    left: calc(50% - 100px);
+  }
+  header .nav li:nth-child(3) {
+    margin-left: 80px
+  }
+  header .nav li:nth-child(4) {
+    margin-left: 120px;
+  }
+  header .nav li:nth-child(5) {
+    margin-left: 160px;
+  }
   header h1 {
     font-size: 26px;
     left: calc(50% - 90px);
@@ -725,5 +824,8 @@ header .header_wrap {
   header .prof {
     font-size: 14px;
     left: calc(50% - 50px);
+  }
+  header .nav li:nth-child(2) {
+    margin-left: 40px
   }
 }
