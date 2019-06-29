@@ -83,17 +83,6 @@ a {
     -webkit-animation: lamp 3.8s
 }
 
-#hellopreloader_preload .progr {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    margin-left: -50px;
-    background: url(../img/svg/prog.svg) center center no-repeat;
-    background-size: 55px
-}
-
 header {
     position: relative;
     background-color: #FFE1FA;
